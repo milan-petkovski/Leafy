@@ -22,7 +22,6 @@ function openModal(event) {
         modalContent.style.opacity = '1';
     }, 10);
 
-    // Dodaj event listener za klik van modala
     modal.addEventListener('click', function closeOnClickOutside(e) {
         if (!modalContent.contains(e.target)) {
             closeModal();
@@ -48,18 +47,18 @@ document.getElementById('downloadForm').addEventListener('submit', async functio
     e.preventDefault();
     const name = encodeURIComponent(document.getElementById('name').value);
     const email = encodeURIComponent(document.getElementById('email').value);
-    const url = `https://script.google.com/macros/s/AKfycbxsSezT276eQdpiqRcZk7_GOgGzJynZYIvz56BcclB-vH2uhlMZxsq1C3xm8LEtnbpN/exec?name=${name}&email=${email}`;
+    const url = `https://script.google.com/macros/s/AKfycbz-FQU37VEM1IWu8cEUMPYtxkuksGSgR_gBpmYNRRlQ_K13gpqFmdal-P3vulc0Em78/exec?name=${name}&email=${email}`;
 
     try {
         const response = await fetch(url);
         const result = await response.json();
         if (result.status === 'success') {
-            alert('Thank you! A download link has been sent to your email.');
+            alert('Thank you! The download link has been sent to your email.');
             closeModal();
         } else {
-            alert('An error occurred. Try again.');
+            alert(result.message || 'An error occurred. Please try again.');
         }
     } catch (error) {
-        alert('Connection error. Try again.');
+        alert('Connection error. Please try again.');
     }
 });
