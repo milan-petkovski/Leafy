@@ -55,10 +55,16 @@ document.getElementById('downloadForm').addEventListener('submit', async functio
         if (result.status === 'success') {
             alert('Thank you! The download link has been sent to your email.');
             closeModal();
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
         } else {
             alert(result.message || 'An error occurred. Please try again.');
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
         }
     } catch (error) {
         alert('Connection error. Please try again.');
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
     }
 });
