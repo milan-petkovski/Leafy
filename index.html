@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leafy Mindset</title>
+    <link rel="stylesheet" href="style.css">    
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+<header>
+    <a href="#" class="logo">
+        <img src="images/logo.png" alt="Leafy Mindset Logo">
+    </a>
+    <div class="right-content">
+        <a href="#" class="nav-btn" onclick="openModal(event)">Download</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h5>#LeafYourLimitsBehind</h5>
+        <h1>Free eBook</h1>
+        <p>Discover how to break free from limiting beliefs and unlock your true potential.</p>
+        <div class="main-hero">
+            <a href="#" class="btn" onclick="openModal(event)">Free Download</a>
+        </div>
+    </div>
+    <div class="hero-img">
+        <img src="images/hero.png" alt="Hero Image">
+    </div>
+</section>
+
+<!-- Modal za unos podataka -->
+<div id="downloadModal" class="modal">
+    <div class="modal-content">
+        <h2>Enter your download information</h2>
+        <form id="downloadForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit" class="btn">Download</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="main.js"></script>
