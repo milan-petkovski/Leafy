@@ -47,24 +47,43 @@ document.getElementById('downloadForm').addEventListener('submit', async functio
     e.preventDefault();
     const name = encodeURIComponent(document.getElementById('name').value);
     const email = encodeURIComponent(document.getElementById('email').value);
-    const url = `https://script.google.com/macros/s/AKfycbz-FQU37VEM1IWu8cEUMPYtxkuksGSgR_gBpmYNRRlQ_K13gpqFmdal-P3vulc0Em78/exec?name=${name}&email=${email}`;
+    const url = `https://script.google.com/macros/s/AKfycbw_TIjHEcH777NKwYRNSiAKS_HA6URwuzqkMLKJmLn9xsP7C9F_JdCxMSNGXroNhBsw/exec?name=${name}&email=${email}`;
 
     try {
         const response = await fetch(url);
         const result = await response.json();
         if (result.status === 'success') {
-            alert('Thank you! The download link has been sent to your email.');
+            showToast('Thank you! The download link has been sent to your email.');
             closeModal();
             document.getElementById('name').value = '';
             document.getElementById('email').value = '';
+        } else if (result.status === 'quota_exceeded') {
+            showToast(result.message, 'error');
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
         } else {
-            alert(result.message || 'An error occurred. Please try again.');
+            showToast(result.message || 'An error occurred. Please try again.', 'error');
             document.getElementById('name').value = '';
             document.getElementById('email').value = '';
         }
     } catch (error) {
-        alert('Connection error. Please try again.');
+        showToast('Connection error. Please try again.', 'error');
         document.getElementById('name').value = '';
         document.getElementById('email').value = '';
     }
 });
+
+function showToast(message, type = 'success') {
+    const container = document.getElementById('toastContainer');
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.textContent = message;
+
+    container.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(100%)';
+        setTimeout(() => toast.remove(), 500);
+    }, 4000);
+}
