@@ -15,6 +15,7 @@
     --p-font: 1rem;
 }
 body {
+    background: #222;
     background-image: url("images/bg.png");
     color: var(--text-color);
 }
