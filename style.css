@@ -283,6 +283,41 @@ header {
         opacity: 1;
     }
 }
+@keyframes gradientFlow {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+
+.premium-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: transparent;
+    border: 2px solid #4aa88a;
+    color: #fff;
+}
+.premium-btn:hover {
+    transform: translateY(1px);
+    color: #fff;
+    border-color: #3e8e75;
+}
+.premium-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    background: linear-gradient(45deg, #4aa88a, #3e8e75, #28a745, #4aa88a);
+    z-index: -1;
+    animation: gradientFlow 5s linear infinite;
+}
 
 
 /* MEDIA */
