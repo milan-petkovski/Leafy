@@ -68,6 +68,7 @@ header {
     color: var(--text-color);
     font-size: 15px;
     font-weight: 500;
+    cursor: pointer;
     border-radius: 7px;
     transition: all .6s ease;
 }
