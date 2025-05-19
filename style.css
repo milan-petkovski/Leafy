@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +9,7 @@
 :root {
     --bg-color: #0c0c0c;
     --text-color: #ffffff;
-    --main-color: #3ea888;
+    --main-color: #1c7a26;
     --big-font: 6.6rem;
     --p-font: 1rem;
 }
