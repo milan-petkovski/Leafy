@@ -242,7 +242,7 @@ header {
 }
 .modal-content button:hover {
     transform: scale(1.05);
-    background: #4aa88a;
+    background: #2ba838;
 }
 .toast-container {
     position: fixed;
@@ -291,34 +291,6 @@ header {
         transform: translateX(100%);
     }
 }
-
-
-
-.premium-btn {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    background: transparent;
-    border: 2px solid #4aa88a;
-    color: #fff;
-}
-.premium-btn:hover {
-    transform: translateY(1px);
-    color: #fff;
-    border-color: #3e8e75;
-}
-.premium-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 7px;
-    background: linear-gradient(45deg, #4aa88a, #3e8e75, #28a745, #4aa88a);
-    z-index: -1;
-    animation: gradientFlow 5s linear infinite;
-}
-
 
 /* MEDIA */
 @media (max-width: 1200px) {
@@ -393,4 +365,21 @@ header {
         padding: 10px 30px;
         font-size: 0.95rem;
     }
+}
+
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/roboto-v47-latin-regular.woff2') format('woff2');
+}
+/* roboto-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('fonts/roboto-v47-latin-500.woff2') format('woff2');
 }
