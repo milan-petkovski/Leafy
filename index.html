@@ -1,70 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">    
-    <meta name="theme-color" content="#212121">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leafy Mindset</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Leafy Mindset is a platform dedicated to mental health and personal development through natural methods.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#212121">
+  <link rel="canonical" href="https://leafymindset.netlify.app">
+  <title>Leafy Mindset</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta property="og:title" content="Leafy Mindset">
+  <meta property="og:description" content="Leafy Mindset is a platform dedicated to mental health and personal development through natural methods.">
+  <meta property="og:url" content="https://leafymindset.netlify.app">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://leafymindset.netlify.app/images/logo.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Leafy Mindset",
+    "url": "https://leafymindset.netlify.app",
+    "description": "Leafy Mindset is a platform dedicated to mental health and personal development through natural methods."
+  }
+  </script>
+  <link rel="preload" href="images/hero.png" as="image">
+  <link rel="preload" href="images/logo.png" as="image">
 </head>
 <body>
 
 <header>
-    <a href="#" class="logo">
-        <img src="images/logo.png" alt="Leafy Mindset Logo">
-    </a>
-
-    <div class="right-content">
-        <button class="nav-btn" onclick="openModal(event)">Free Download</button>
-    </div>
-    <!--
-    <div class="right-content">
-        <a href="https://greenconscious.gumroad.com/l/SSOP?wanted=true" class="btn premium-btn" target="_blank">Premium eBook
-            <span class="premium-bg"></span>
-        </a>
-    </div>  
-    -->    
+  <a href="/" class="logo" aria-label="Leafy Mindset - Home">
+    <img src="images/logo.png" alt="Leafy Mindset Logo" width="150" height="50" loading="lazy">
+  </a>
+  <nav role="navigation" aria-label="Main Navigation">
+    <button class="nav-btn" onclick="openModal(event)" aria-haspopup="dialog" aria-controls="downloadModal" aria-expanded="false">Free Download</button>
+  </nav>
 </header>
 
-<section class="hero">
-    <div class="hero-text">
-        <h5>#LeafYourLimitsBehind</h5>
-        <h1>Free eBook</h1>
-        <p>Discover how to break free from limiting beliefs and unlock your true potential.</p>
-        <div class="main-hero">
-            <a href="#" class="btn" onclick="openModal(event)">Free Download</a>
-        </div>
+<section class="hero" role="region" aria-labelledby="hero-title">
+  <div class="hero-text">
+    <h5 id="hero-hashtag">#LeafYourLimitsBehind</h5>
+    <h1 id="hero-title">Free eBook</h1>
+    <p>Discover how to break free from limiting beliefs and unlock your true potential.</p>
+    <div class="main-hero">
+      <a href="#" class="btn" onclick="openModal(event)" aria-haspopup="dialog" aria-controls="downloadModal" aria-expanded="false">Free Download</a>
     </div>
-    <div class="hero-img">
-        <img src="images/hero.png" alt="Hero Image">
-    </div>
+  </div>
+  <div class="hero-img">
+    <img src="images/hero.png" alt="Free eBook" width="600" height="400" loading="lazy">
+  </div>
 </section>
 
-<div id="toastContainer" class="toast-container"></div>
+<div id="toastContainer" class="toast-container" role="alert" aria-live="polite" aria-atomic="true"></div>
 
-<div id="downloadModal" class="modal">
-    <div class="modal-content">
-        <h2>Enter the details for the download.</h2>
-        <form id="downloadForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <button type="submit" class="btn">Download</button>
-        </form>
-    </div>
+<div id="downloadModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" hidden>
+  <div class="modal-content">
+    <h2 id="modal-title">Enter your details to download</h2>
+    <form id="downloadForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required aria-required="true" autocomplete="name">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
+      <button type="submit" class="btn">Download</button>
+    </form>
+  </div>
 </div>
-
-<!--
-<div class="icons">
-    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-</div>
--->
 
 </body>
 </html>
-<script src="main.js"></script>
+<script src="main.js" defer></script>
