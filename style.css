@@ -12,10 +12,10 @@
     --main-color: #1c7a26;
     --big-font: 6.6rem;
     --p-font: 1rem;
+    --grad: linear-gradient(135deg, #222 0%, #1a1a1a 25%, #0c0c0c 75%, #080808 100%);
 }
 body {
-    background: #222;
-    background-image: url("images/bg.png");
+    background: var(--grad);
     color: var(--text-color);
 }
 section {
@@ -49,7 +49,11 @@ header {
     transition: all .5s ease;
 }
 .logo img {
+    width: 10vw;
+    max-width: 140px;
+    min-width: 90px;
     height: auto;
+    transition: transform 0.3s ease;
 }
 .logo img:hover {
     transform: translateY(1px);
@@ -178,14 +182,14 @@ header {
     opacity: 1;
 }
 .modal-content {
-    background-image: url("images/bg.png");
+    background: #222;
     position: absolute;
     padding: 30px;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     width: 90%;
     max-width: 550px;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     opacity: 0;
     transition: all 0.4s ease;
 }

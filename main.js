@@ -73,6 +73,13 @@ document.getElementById('downloadForm').addEventListener('submit', async functio
     }
 });
 
+document.getElementById('email').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('downloadForm').dispatchEvent(new Event('submit'));
+    }
+});
+
 function showToast(message, type = 'success') {
     const container = document.getElementById('toastContainer');
     const toast = document.createElement('div');
