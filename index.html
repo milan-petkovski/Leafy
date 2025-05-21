@@ -8,27 +8,41 @@
   <meta name="theme-color" content="#212121">
   <link rel="canonical" href="https://leafymindset.netlify.app">
   <title>Leafy Mindset</title>
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="preload" href="images/hero.webp" as="image">
+  <link rel="preload" href="images/logo.webp" as="image">
+  <link rel="preload" href="fonts/roboto-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/roboto-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" media="all" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
   <meta property="og:title" content="Leafy Mindset">
   <meta property="og:description" content="Leafy Mindset is a platform dedicated to mental health and personal development through natural methods.">
   <meta property="og:url" content="https://leafymindset.netlify.app">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://leafymindset.netlify.app/images/logo.webp">
-  <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'; this.onload=null;">
+  <meta property="og:image:alt" content="Leafy Mindset Logo">
+  <meta property="og:site_name" content="Leafy Mindset">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Leafy Mindset">
+  <meta name="twitter:description" content="Leafy Mindset is a platform dedicated to mental health and personal development through natural methods.">
+  <meta name="twitter:image" content="https://leafymindset.netlify.app/images/logo.webp">
+  <meta name="twitter:site" content="@LeafyMindset">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Leafy Mindset",
     "url": "https://leafymindset.netlify.app",
-    "description": "Leafy Mindset is a platform dedicated to mental health and personal development through natural methods."
+    "description": "Leafy Mindset is a platform dedicated to mental health and personal development through natural methods.",
+    "logo": "https://leafymindset.netlify.app/images/logo.webp",
+    "image": "https://leafymindset.netlify.app/images/logo.webp",
+    "sameAs": [
+      "https://facebook.com/LeafyMindset",
+      "https://twitter.com/LeafyMindset",
+      "https://instagram.com/LeafyMindset"
+    ]
   }
   </script>
-  <link rel="preload" href="images/hero.webp" as="image">
-  <link rel="preload" href="images/logo.webp" as="image">
 </head>
 <body>
 
