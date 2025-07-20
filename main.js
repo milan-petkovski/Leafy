@@ -45,6 +45,12 @@ function closeModal() {
 
 document.getElementById('downloadForm').addEventListener('submit', async function(e) {
     e.preventDefault();
+    const submitButton = this.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+    
+    submitButton.textContent = 'Wait...';
+    submitButton.disabled = true;
+
     const name = encodeURIComponent(document.getElementById('name').value);
     const email = encodeURIComponent(document.getElementById('email').value);
     const url = `https://script.google.com/macros/s/AKfycbw_TIjHEcH777NKwYRNSiAKS_HA6URwuzqkMLKJmLn9xsP7C9F_JdCxMSNGXroNhBsw/exec?name=${name}&email=${email}`;
@@ -53,7 +59,7 @@ document.getElementById('downloadForm').addEventListener('submit', async functio
         const response = await fetch(url);
         const result = await response.json();
         if (result.status === 'success') {
-            showToast('Thank you! The download link has been sent to your email.');
+            showToast('Thank you! A download link has been sent to your email.');
             closeModal();
             document.getElementById('name').value = '';
             document.getElementById('email').value = '';
@@ -62,14 +68,17 @@ document.getElementById('downloadForm').addEventListener('submit', async functio
             document.getElementById('name').value = '';
             document.getElementById('email').value = '';
         } else {
-            showToast(result.message || 'An error occurred. Please try again.', 'error');
+            showToast(result.message || 'An error occurred. Try again later.', 'error');
             document.getElementById('name').value = '';
             document.getElementById('email').value = '';
         }
     } catch (error) {
-        showToast('Connection error. Please try again.', 'error');
+        showToast('Connection error. Try again.', 'error');
         document.getElementById('name').value = '';
         document.getElementById('email').value = '';
+    } finally {
+        submitButton.textContent = originalButtonText;
+        submitButton.disabled = false;
     }
 });
 
