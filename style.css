@@ -130,6 +130,7 @@ header {
     font-weight: 500;
     cursor: pointer;
     transition: all .6s ease;
+    margin-right: 2%;
 }
 .btn:hover {
     transform: scale(1.1);
@@ -145,7 +146,7 @@ header {
     font-size: 17px;
     font-weight: 400;
     color: var(--main-color);
-    margin-left: 10px;
+    margin-left: 2px;
 }
 .icons {
     position: absolute;
