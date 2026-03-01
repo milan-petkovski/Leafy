@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-  <img src="https://i.postimg.cc/wBRWq6qt/leafy.png" width="500px" alt="LeafyMindset Screenshot">
+  <img src="https://i.postimg.cc/VNnY12Xj/website5.jpg" width="500px" alt="LeafyMindset Screenshot">
 </div>  
 <br>
 
